@@ -1,8 +1,14 @@
 import Vue from 'vue'
-import App from './App.vue'
+import router from './routes'
+import store from './store'
+import common from './common'
+import App from './components/App'
 
-Vue.config.productionTip = false
+Vue.mixin(common)
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    el: '#app',
+    router,
+    store,
+    render: h => h(App)
+})
